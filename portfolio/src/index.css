@@ -6,6 +6,8 @@
   --light-green: #51cf66;
   --nav-gray: #dee2e6;
   --light-gray: #f1f3f5;
+  --dark-gray: #212529;
+  --medium-gray: #868e96;
 }
 
 
@@ -69,7 +71,8 @@ body {
   font-weight: 300;
   word-spacing: 0.4rem;
   letter-spacing: normal;
-  line-height: 1.2;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .btn {
@@ -105,7 +108,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.4rem;
+  gap: 6.4rem;
 }
 
 .u-mb-sm {
@@ -237,11 +240,11 @@ header {
   flex: 0 1 auto;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2.4rem;
+  gap: 4rem;
   padding: 2.4rem;
-  background-color: var(--nav-gray);
+  background-color: var(--light-gray);
   border-radius: 1rem;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0rem 0.6rem rgba(0, 0, 0, 0.25);
 }
 
 
@@ -298,7 +301,6 @@ header {
 .projectimg {
   display: block;
   max-width: 100%;
-  min-width: 100%;
   height: 30rem;
   margin: 0 auto;
   border-radius: 0.7rem;
@@ -316,3 +318,139 @@ header {
   gap: 2.4rem;
 }
 
+/* Contact css */
+.form {
+   min-width: 70%;
+   padding: 6rem;
+   display: flex;
+   flex: 0 1 auto;
+   flex-direction: column;
+   gap: 3.2rem;
+   background-color: var(--light-gray);
+   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+   border-radius: 0.7rem;
+}
+
+.form-el {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-el label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: inherit;
+}
+
+.form-el input {
+  padding: 1.5rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.4rem;
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.form-el input:focus {
+  border-color: var(--nav-gray); /* Change border color on focus */
+  box-shadow: 0 0 0.5rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.textarea {
+  min-height: 20rem;
+  padding-top: 2rem;
+  text-align: start;
+}
+
+/* Footer css */
+.section-footer {
+  min-width: 100vw;
+  background-color: var(--dark-gray);
+  padding-bottom: 0;
+}
+.footer-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+  color:var(--light-gray);
+}
+
+.access {
+  padding: 2rem 4rem;
+  text-align: center;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  gap: 3.4rem;
+}
+
+.access ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.access ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--light-gray);
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.access ul li a:hover {
+  color: var(--light-green);
+  transform: scale(1.4);
+}
+
+.socials {
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.socials ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials ul li a {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  color: var(--medium-gray);
+  background-color: var(--light-gray);
+  padding: 1rem;
+  border-radius: 10rem;
+  transition: all 0.5s;
+}
+
+.socials ul li a:hover {
+  background-color: var(--light-green);
+  color: var(--dark-gray);
+}
+
+ion-icon {
+  font-size: 3.2rem;
+}
+
+.copyright {
+  padding: 6rem 0;
+  text-align: center;
+  color: var(--light-gray);
+  font-size: 1.4rem;
+  font-weight: 600;
+}

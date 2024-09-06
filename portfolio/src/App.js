@@ -1,19 +1,20 @@
-const person = {name:'kevin Njogu', 
+const person = {name:'Kevin Njogu', 
   profilePhoto:'images/profile.jpg', 
   navLinks: ['home', 'about', 'project', 'contacts'],
   introduction: 'A Self-Driven Web Developer and Banker.I build and manage Websites and Web Applications that leads to the success of the overall product.',
   about: 'Discover how I can elevate your projects with my expertise in both financial services and software development.',
-  project: 'Explore the innovative projects that define our cutting-edge vision and creative excellence.'
+  project: 'Explore the innovative projects that define our cutting-edge vision and creative excellence.',
+  contact:"Let’s Connect! Drop me a message and I’ll get back to you as soon as I can. Looking forward to hearing from you!",
 
 }
-
-
 
 export default function App () {
   return <div className='app'>
     <Header/>
     <About/>
     <Projects/>
+    <Contact/>
+    <Footer />
   </div>
 }
 
@@ -127,5 +128,66 @@ function Project({project}) {
     <button className='btn'>visit</button>
   </div>
   </>
+}
 
+function Contact() {
+  return(
+    <section className='section'>
+      <div className='section-box'>
+        <div className='about-text'>
+          <h2 className='heading-secondary'>Contact Me</h2>
+          <p className='paragraph section-description'>{person.contact}</p>
+        </div>        
+        <form className='form'>
+          <div className='form-el'>
+            <label for='name'>Name</label>
+            <input type='text' placeholder='Jane Doe'/>
+          </div>
+          <div className='form-el'>
+            <label for='name'>email</label>
+            <input type='email' placeholder='janedoe@mail.com'/>
+          </div>
+          <div className='form-el'>
+            <label for='name'>message</label>
+            <input className='textarea' type='text' placeholder='Enter your message....'/>
+        </div>
+        <button type='submit' className='btn'>Submit</button>
+      </form>
+      </div>
+    </section>
+  )
+}
+
+function Footer() {
+  const year = new Date().getFullYear()
+
+  return (
+    <section className='section section-footer'>
+      <div className='section-box footer-box u-mb-sm'>
+        <div>
+          <h2 className='heading-secondary u-mb-sm'>{person.name}</h2>
+          <p className='paragraph'>{person.introduction}</p>
+        </div>
+        <div className='access'>
+          <h3 className='heading-tertiary'>Access</h3>
+          <ul>
+            {person.navLinks.map((link, idx)=><li key='idx'><a href='#'>{link}</a></li>)}
+          </ul>
+        </div>
+        <div className='socials'>
+          <h3 className='heading-tertiary'>Socials</h3>
+          <ul>
+            <li><a href='#'><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href='#'><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href='#'><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href='#'><ion-icon name="logo-youtube"></ion-icon></a></li>
+          </ul>  
+        </div>
+      </div>
+      <hr/>
+      <div className='copyright'>
+        <p className='paragraph'>© Copyright {year} . Made by {person.name}</p>
+      </div>
+    </section>
+  )
 }

@@ -3,7 +3,7 @@ const person = {name:'Kevin Njogu',
   navLinks: ['home', 'about', 'project', 'contacts'],
   introduction: 'A Self-Driven Web Developer and Banker.I build and manage Websites and Web Applications that leads to the success of the overall product.',
   about: 'Discover how I can elevate your projects with my expertise in both financial services and software development.',
-  project: 'Explore the innovative projects that define our cutting-edge vision and creative excellence.',
+  project: 'Explore the innovative projects that define my cutting-edge vision and creative excellence.',
   contact:"Let’s Connect! Drop me a message and I’ll get back to you as soon as I can. Looking forward to hearing from you!",
 
 }
@@ -53,15 +53,17 @@ function Hero () {
 function About() {
   const about = [{experince:'Banking',
     statement:'I excel in realtionship management, cash management and treasury operations.',
-    duties:['Liquidity', 'Casflow', 'Payments','Risk', 'Investment', 'Foreign Exchange', 'Debt', 'Relationship management'],
-    tools: ['T24 Core Banking', 'Excel and Google Sheets', 'Dhow CSD', 'SWIFT', 'CRM']
+    duties:['Risk Management', 'Payments Processing', 'Foreign Exchange Operations', 'Investment and Debt managememt', 'Liquidity and Cashflow management'],
+    tools: ['T24 Core Banking', 'Excel and Google Sheets', 'Dhow CSD', 'SWIFT', 'CRM'],
+    position:'Treasury Specialist'
   }, {experince:'Web development',
     statement:'I like to code things from scratch, and enjoy bringing ideas to life in the browser.',
-    duties:['HTML', 'CSS', 'SASS', 'Javascript', 'React', 'Python', 'Django', 'Pandas', 'Numpy', 'Seaborne', 'Matplotlib'],
-    tools: ['VS code', 'Github', 'Netlify', 'AWS', 'Bootstrap', 'Jupyter notebooks', 'Anaconda']
+    duties:['Python and NodeJS', 'React, Django and Flask', 'VS Code, Github and Netlify', 'HTML5, CSS3, SASS and Javascript', 'Pandas, Numpy, Matplotlib, and Seaborne'],
+    tools: ['VS code', 'Github', 'Netlify', 'AWS', 'Bootstrap', 'Jupyter notebooks', 'Anaconda'],
+    position:'FullStack Developer'
   }]
   return (
-  <section className="section">
+  <section className="section section-about">
     <div className='section-box'>
       <div className='about-text'>
         <h2 className='heading-secondary'>About Me</h2>
@@ -77,15 +79,19 @@ function About() {
 function Card({exp}) {
   return (
   <div className='card'>
-    <div>
+    <div className='card-header'>
+      <i class="fa-solid fa-briefcase"></i>
       <h2 className='heading-secondary u-mb-sm'>{exp.experince}</h2>
+    </div>   
+    <div className='position'>
+      <h3 className='heading-tertiary u-mb-sm'>{exp.position}</h3>
       <p className='paragraph'>{exp.statement}</p>
     </div>
-    <div>
+    <div className='duties'>
       <h3 className='heading-tertiary'>What I know</h3>
-      <div className='spans'>{exp.duties.map((duty, idx) => (<span key={idx}>{duty}</span>))}</div>
+      <ul className='ul-el'>{exp.duties.map((duty, idx) => (<li key={idx}>{duty}</li>))}</ul>
     </div>
-    <div>
+    <div className='tools'>
       <h3 className='heading-tertiary'>Tools I use</h3>
       <div className='spans'>{exp.tools.map((tool, idx) => (<span key={idx}>{tool}</span>))}</div>
     </div>
@@ -118,21 +124,22 @@ function Projects() {
 }
 
 function Project({project}) {
-  return<>
-  <div className='projectimg-box'>
-    <img src={project.projectImage} alt={project.projectname} className='projectimg'/>
-  </div>
-  <div className='projecttext-box'>
-    <h3 className ='heading-tertiary'>{project.projectname}</h3>
-    <p className='paragraph'>{project.description}</p>
-    <button className='btn'>visit</button>
-  </div>
-  </>
+  return(
+  <div className='prjct'>
+    <div className='projectimg-box'>
+      <img src={project.projectImage} alt={project.projectname} className='projectimg'/>
+    </div>
+    <div className='projecttext-box'>
+      <h3 className ='heading-tertiary'>{project.projectname}</h3>
+      <p className='paragraph'>{project.description}</p>
+      <button className='btn'>visit</button>
+    </div>
+  </div>)
 }
 
 function Contact() {
   return(
-    <section className='section'>
+    <section className='section section-contact'>
       <div className='section-box'>
         <div className='about-text'>
           <h2 className='heading-secondary'>Contact Me</h2>

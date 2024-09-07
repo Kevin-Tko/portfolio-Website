@@ -34,7 +34,7 @@ function Navigation() {
       <span>{person.name}</span>
     </div>
     <ul>
-      {person.navLinks.map((link)=> <li><a href='#'>{link}</a></li>)}
+      {person.navLinks.map((link, idx)=> <li key={link[idx]}><a href='#'>{link}</a></li>)}
     </ul>
   </nav>)
 }
@@ -80,7 +80,7 @@ function Card({exp}) {
   return (
   <div className='card'>
     <div className='card-header'>
-      <i class="fa-solid fa-briefcase"></i>
+      <i className="fa-solid fa-briefcase"></i>
       <h2 className='heading-secondary u-mb-sm'>{exp.experince}</h2>
     </div>   
     <div className='position'>
@@ -108,6 +108,9 @@ function Projects() {
   },{projectImage:'images/devs.jpg',
     description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper eleifend. Cras malesuada, ipsum ac varius facilisis, mi nulla.',
     projectname:'project three'
+  }, {projectImage:'images/devs.jpg',
+    description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper eleifend. Cras malesuada, ipsum ac varius facilisis, mi nulla.',
+    projectname:'project four'
   }]
   return (
   <section className="section section-projects">
@@ -138,6 +141,12 @@ function Project({project}) {
 }
 
 function Contact() {
+
+  function handleSubmit(e) {
+    e.preventDefault()
+  }
+
+
   return(
     <section className='section section-contact'>
       <div className='section-box'>
@@ -145,17 +154,17 @@ function Contact() {
           <h2 className='heading-secondary'>Contact Me</h2>
           <p className='paragraph section-description'>{person.contact}</p>
         </div>        
-        <form className='form'>
+        <form className='form' onSubmit={handleSubmit}>
           <div className='form-el'>
-            <label for='name'>Name</label>
+            <label htmlFor='name'>Name</label>
             <input type='text' placeholder='Jane Doe'/>
           </div>
           <div className='form-el'>
-            <label for='name'>email</label>
+            <label htmlFor='name'>email</label>
             <input type='email' placeholder='janedoe@mail.com'/>
           </div>
           <div className='form-el'>
-            <label for='name'>message</label>
+            <label htmlFor='name'>message</label>
             <input className='textarea' type='text' placeholder='Enter your message....'/>
         </div>
         <button type='submit' className='btn'>Submit</button>
@@ -171,14 +180,14 @@ function Footer() {
   return (
     <section className='section section-footer'>
       <div className='section-box footer-box u-mb-sm'>
-        <div>
+        <div className="summary">
           <h2 className='heading-secondary u-mb-sm'>{person.name}</h2>
           <p className='paragraph'>{person.introduction}</p>
         </div>
         <div className='access'>
           <h3 className='heading-tertiary'>Access</h3>
           <ul>
-            {person.navLinks.map((link, idx)=><li key='idx'><a href='#'>{link}</a></li>)}
+            {person.navLinks.map((link, idx)=><li key={idx}><a href='#'>{link}</a></li>)}
           </ul>
         </div>
         <div className='socials'>

@@ -126,25 +126,24 @@ body {
 /* Header CSS */
 /* *********************************************************** */
 header {
-  max-height: 100vh;
-  min-height: 100vh;
-  max-width: 100vw;
-  min-width: 100vw;  
+  min-height: 120vh;
+  min-width: 100vw;
   background: #f8f9fa;
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 5px,
     #f1f3f5 20px 40px
   );
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100vh);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
    position:relative;
+
 }
 
 .nav {
   padding: 2rem 4rem;
   min-width: 100vw;
   max-width: 100vw;
-  max-height: 15vh;
+  /* max-height: 15vh; */
   min-height: 15vh;
   display: flex;
   flex-direction: row;
@@ -191,8 +190,8 @@ header {
 
 .hero {
   display: flex;
-  max-height: 85vh;
-  min-height: 85vh;
+  max-height: 115vh;
+  min-height: 115vh;
   /* grow=false, shrink=True, flex basis/width=auto */
   flex: 0 1 auto; 
   justify-content: center;
@@ -476,9 +475,7 @@ header {
 }
 
 .textarea {
-  min-height: 20rem;
-  padding-top: 2rem;
-  text-align: start;
+  height: 20rem;
 }
 
 /* *********************************************************** */
@@ -569,42 +566,4 @@ ion-icon {
   color: var(--light-gray);
   font-size: 1.4rem;
   font-weight: 600;
-}
-
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .hero-text {
-  padding: 2.4rem;
-  max-width: 60vw;
-  min-width: 60vw;
-  /* max-height: 40%; */
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: -6rem;
-}
-
-.hero div p {
-  line-height: 2;
-  letter-spacing: 0.2rem;
-  text-align: center;
-}
-  .heading-primary {
-    text-transform: uppercase;
-    word-spacing: 0.1rem;
-    letter-spacing: 0.1rem;
-    font-size: 3rem;
-    font-weight: 700;
-  }
-
-  .btn {
-    width: 15rem;
-  }
-
-  .nav ul {
-    gap: 3rem;
-  }
 }

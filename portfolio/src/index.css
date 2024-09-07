@@ -465,7 +465,7 @@ header {
   font-size: 1.4rem;
   font-family: inherit;
   font-weight: 600;
-  text-transform: capitalize;
+  text-transform: lowercase;
 }
 
 .form-el input:focus {

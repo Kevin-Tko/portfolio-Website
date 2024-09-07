@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const person = {name:'Kevin Njogu', 
   profilePhoto:'images/profile.jpg', 
   navLinks: ['home', 'about', 'project', 'contacts'],
@@ -141,9 +143,21 @@ function Project({project}) {
 }
 
 function Contact() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('') 
 
   function handleSubmit(e) {
     e.preventDefault()
+
+    if(!name || !email || !message) return
+
+    const feedBack = {name, email, message}
+    console.log(feedBack)
+
+    setName('')
+    setEmail('')
+    setMessage('')
   }
 
 
@@ -157,15 +171,15 @@ function Contact() {
         <form className='form' onSubmit={handleSubmit}>
           <div className='form-el'>
             <label htmlFor='name'>Name</label>
-            <input type='text' placeholder='Jane Doe'/>
+            <input type='text' placeholder='Jane Doe' value={name} onChange={(e) => setName(e.target.value)}/>
           </div>
           <div className='form-el'>
             <label htmlFor='name'>email</label>
-            <input type='email' placeholder='janedoe@mail.com'/>
+            <input type='email' placeholder='janedoe@mail.com' value={email} onChange={(e) => setEmail(e.target.value)}/>
           </div>
           <div className='form-el'>
             <label htmlFor='name'>message</label>
-            <input className='textarea' type='text' placeholder='Enter your message....'/>
+            <input className='textarea' type='text' placeholder='Enter your message....' value={message} onChange={(e) => setMessage(e.target.value)}/>
         </div>
         <button type='submit' className='btn'>Submit</button>
       </form>
